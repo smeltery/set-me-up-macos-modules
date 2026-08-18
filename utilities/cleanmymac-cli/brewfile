@@ -1,0 +1,4 @@
+abort "macOS only" unless OS.mac?
+
+tap "macpaw/taps"
+cask "cleanmymac-cli"
