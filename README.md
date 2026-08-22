@@ -59,6 +59,7 @@ macos/
     ├── appcleaner/
     ├── imazing/
     ├── muzzle/
+    ├── openlogi/
     ├── rocket/
     └── syntax-highlight/
 ```
