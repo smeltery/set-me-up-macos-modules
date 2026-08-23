@@ -2,7 +2,7 @@
 
 [![License: PolyForm Shield 1.0.0](https://img.shields.io/badge/License-PolyForm%20Shield%201.0.0-blue.svg)](https://polyformproject.org/licenses/shield/1.0.0)
 
-This repository contains granular macOS/Homebrew modules for the [`set-me-up`](https://github.com/dotbrains/set-me-up) project.
+This repository contains granular macOS/Homebrew modules for the [`set-me-up`](https://github.com/smeltery/set-me-up) project.
 
 ## Structure
 
@@ -71,7 +71,7 @@ Each module directory contains one of:
 - **`brewfile`** — most common. A standard Homebrew Bundle file consumed by `brew bundle install`.
 - **`<name>.sh`** — used when an install can't be expressed as a brewfile (App Store launches, vendor installers, post-install configuration). See `development-tools/xcode/`, `development-tools/macports/`, and `installers/`.
 
-The `smu` installer resolves a module by name and runs whichever artifact it finds. See the [installer README](https://github.com/dotbrains/set-me-up-installer#discovering-modules) for the full module-resolution rules and the `-p` / `-i` / `-l` flags.
+The `smu` installer resolves a module by name and runs whichever artifact it finds. See the [installer README](https://github.com/smeltery/set-me-up-installer#discovering-modules) for the full module-resolution rules and the `-p` / `-i` / `-l` flags.
 
 ## OS guarding
 
@@ -100,11 +100,11 @@ For `*.sh` modules `smu` only acts when the module ships two opt-in sibling file
 
 If a `*.sh` module shares its directory with a `brewfile`, `smu --uninstall` runs both inverses in order: the per-module `<name>.uninstall.sh` first (to clean up what the install script did beyond the brewfile), then `brew bundle cleanup --force` (to drop the brewfile-declared dependencies).
 
-See the [installer README](https://github.com/dotbrains/set-me-up-installer#auditing-whats-installed) for the full status/uninstall reference, including detection rules, sample output, and authoring examples.
+See the [installer README](https://github.com/smeltery/set-me-up-installer#auditing-whats-installed) for the full status/uninstall reference, including detection rules, sample output, and authoring examples.
 
 ## Usage
 
-These modules are designed to be used as submodules within the [`set-me-up` blueprint](https://github.com/dotbrains/set-me-up-blueprint) repository.
+These modules are designed to be used as submodules within the [`set-me-up` blueprint](https://github.com/smeltery/set-me-up-blueprint) repository.
 
 ## License
 
