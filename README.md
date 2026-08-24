@@ -31,6 +31,7 @@ macos/
 │   ├── jetbrains-toolbox/
 │   ├── macports/
 │   ├── rancher-desktop/
+│   ├── worktrunk/
 │   ├── xcode/
 │   └── zed/
 ├── fonts/
