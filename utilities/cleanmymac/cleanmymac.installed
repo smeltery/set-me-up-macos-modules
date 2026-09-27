@@ -1,0 +1,3 @@
+#!/bin/bash
+# smu --status marker: exit 0 if CleanMyMac is installed.
+[[ -d "/Applications/CleanMyMac.app" || -d "/Applications/CleanMyMac_5.app" ]]

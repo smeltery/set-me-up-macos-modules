@@ -1,8 +1,8 @@
 id = "productivity/cleanshot"
 trust = "first-party"
 network = true
-requires_sudo = false
-writes = []
+requires_sudo = true
+writes = ["/Applications/CleanShot X.app"]
 rollback = "partial"
 
 [adapters.rcm]

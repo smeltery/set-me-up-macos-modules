@@ -84,6 +84,24 @@ Each module directory contains one of:
 - **`brewfile`** — most common. A standard Homebrew Bundle file consumed by `brew bundle install`.
 - **`<name>.sh`** — used when an install can't be expressed as a brewfile (App Store launches, vendor installers, post-install configuration). See `development-tools/xcode/`, `development-tools/macports/`, and `installers/`.
 
+When both a `<name>.sh` and a `brewfile` are present, `smu` runs the script (it takes precedence). Several former-Setapp modules use that shape to support multiple install paths:
+
+1. **Homebrew cask** (default) — `brew_bundle_install` against the sibling `brewfile` when `brew` is available.
+2. **Vendor dmg/zip/pkg** — download the current cask artifact from [formulae.brew.sh](https://formulae.brew.sh) and install it with `install_from_URL`.
+3. **Mac App Store** (`mas`) — when the module declares `--mas-id` (currently `productivity/textsniper`). Requires App Store sign-in.
+
+Select a path with `SMU_INSTALL_METHOD`:
+
+```bash
+smu -m productivity/cleanshot                              # cask (default)
+SMU_INSTALL_METHOD=vendor smu -m productivity/cleanshot    # vendor dmg/zip
+SMU_INSTALL_METHOD=mas smu -m productivity/textsniper      # App Store via mas
+```
+
+`SMU_VENDOR_INSTALL=1` and `SMU_MAS_INSTALL=1` remain aliases for `vendor` and `mas`.
+
+Shared helper: `scripts/lib/install-app.sh`. Endurance has no cask and always uses the vendor zip. Pure App Store modules still live under `app-store/` as `mas` brewfiles.
+
 The `smu` installer resolves a module by name and runs whichever artifact it finds. See the [installer README](https://github.com/smeltery/set-me-up-installer#discovering-modules) for the full module-resolution rules and the `-p` / `-i` / `-l` flags.
 
 ## OS guarding
