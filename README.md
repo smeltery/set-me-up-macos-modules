@@ -11,7 +11,8 @@ Each module is organized by category with per-package subdirectories:
 ```
 macos/
 ├── ai/
-│   └── chatgpt/
+│   ├── chatgpt/
+│   └── maestri/
 ├── app-store/
 │   ├── carousel-weather/
 │   ├── notability/
@@ -42,11 +43,14 @@ macos/
 │   └── spotify/
 ├── productivity/
 │   ├── betterdisplay/
+│   ├── cleanshot/
 │   ├── contexts/
+│   ├── displaybuddy/
 │   ├── dockdoor/
 │   ├── hyperkey/
 │   ├── raycast/
 │   ├── rectangle-pro/
+│   ├── textsniper/
 │   ├── topnotch/
 │   └── wisprflow/
 ├── security/
@@ -57,10 +61,17 @@ macos/
 │   ├── iterm2/
 │   └── warp/
 └── utilities/
+    ├── airbuddy/
+    ├── aldente/
     ├── appcleaner/
+    ├── archiver/
+    ├── cleanmymac/
+    ├── cleanmymac-cli/
     ├── imazing/
     ├── muzzle/
+    ├── one-switch/
     ├── openlogi/
+    ├── renamer/
     ├── rocket/
     └── syntax-highlight/
 ```
