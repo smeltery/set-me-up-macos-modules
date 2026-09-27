@@ -1,0 +1,3 @@
+#!/bin/bash
+# smu --status marker: exit 0 if Maestri is installed.
+[[ -d "/Applications/Maestri.app" ]]

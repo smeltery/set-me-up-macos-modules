@@ -1,0 +1,3 @@
+#!/bin/bash
+# smu --status marker: exit 0 if TextSniper is installed.
+[[ -d "/Applications/TextSniper.app" ]]

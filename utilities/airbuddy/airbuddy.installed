@@ -1,0 +1,3 @@
+#!/bin/bash
+# smu --status marker: exit 0 if AirBuddy is installed.
+[[ -d "/Applications/AirBuddy.app" ]]

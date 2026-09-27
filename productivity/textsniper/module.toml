@@ -1,8 +1,8 @@
 id = "productivity/textsniper"
 trust = "first-party"
 network = true
-requires_sudo = false
-writes = []
+requires_sudo = true
+writes = ["/Applications/TextSniper.app"]
 rollback = "partial"
 
 [adapters.rcm]

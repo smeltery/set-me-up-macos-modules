@@ -1,0 +1,3 @@
+#!/bin/bash
+# smu --status marker: exit 0 if Archiver is installed.
+[[ -d "/Applications/Archiver.app" ]]

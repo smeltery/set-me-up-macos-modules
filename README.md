@@ -84,6 +84,17 @@ Each module directory contains one of:
 - **`brewfile`** — most common. A standard Homebrew Bundle file consumed by `brew bundle install`.
 - **`<name>.sh`** — used when an install can't be expressed as a brewfile (App Store launches, vendor installers, post-install configuration). See `development-tools/xcode/`, `development-tools/macports/`, and `installers/`.
 
+When both a `<name>.sh` and a `brewfile` are present, `smu` runs the script (it takes precedence). Several former-Setapp modules use that shape to support two install paths:
+
+1. **Homebrew cask** (default) — `brew_bundle_install` against the sibling `brewfile` when `brew` is available.
+2. **Vendor dmg/zip/pkg** — download the current cask artifact from [formulae.brew.sh](https://formulae.brew.sh) and install it with `install_from_URL`. Force this path with:
+
+   ```bash
+   SMU_VENDOR_INSTALL=1 smu -m productivity/cleanshot
+   ```
+
+Shared helper: `scripts/lib/install-app.sh`. Endurance has no cask and always uses the vendor zip.
+
 The `smu` installer resolves a module by name and runs whichever artifact it finds. See the [installer README](https://github.com/smeltery/set-me-up-installer#discovering-modules) for the full module-resolution rules and the `-p` / `-i` / `-l` flags.
 
 ## OS guarding

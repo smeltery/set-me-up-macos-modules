@@ -1,0 +1,3 @@
+#!/bin/bash
+# smu --status marker: exit 0 if Renamer is installed.
+[[ -d "/Applications/Renamer.app" ]]
