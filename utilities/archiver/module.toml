@@ -1,0 +1,9 @@
+id = "utilities/archiver"
+trust = "first-party"
+network = true
+requires_sudo = false
+writes = []
+rollback = "partial"
+
+[adapters.rcm]
+path = "."

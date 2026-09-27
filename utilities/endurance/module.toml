@@ -1,0 +1,9 @@
+id = "utilities/endurance"
+trust = "first-party"
+network = true
+requires_sudo = true
+writes = ["/Applications/Endurance.app"]
+rollback = "partial"
+
+[adapters.rcm]
+path = "."

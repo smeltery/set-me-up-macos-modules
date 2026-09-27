@@ -11,7 +11,8 @@ Each module is organized by category with per-package subdirectories:
 ```
 macos/
 ├── ai/
-│   └── chatgpt/
+│   ├── chatgpt/
+│   └── maestri/
 ├── app-store/
 │   ├── carousel-weather/
 │   ├── notability/
@@ -42,11 +43,14 @@ macos/
 │   └── spotify/
 ├── productivity/
 │   ├── betterdisplay/
+│   ├── cleanshot/
 │   ├── contexts/
+│   ├── displaybuddy/
 │   ├── dockdoor/
 │   ├── hyperkey/
 │   ├── raycast/
 │   ├── rectangle-pro/
+│   ├── textsniper/
 │   ├── topnotch/
 │   └── wisprflow/
 ├── security/
@@ -57,10 +61,18 @@ macos/
 │   ├── iterm2/
 │   └── warp/
 └── utilities/
+    ├── airbuddy/
+    ├── aldente/
     ├── appcleaner/
+    ├── archiver/
+    ├── cleanmymac/
+    ├── cleanmymac-cli/
+    ├── endurance/
     ├── imazing/
     ├── muzzle/
+    ├── one-switch/
     ├── openlogi/
+    ├── renamer/
     ├── rocket/
     └── syntax-highlight/
 ```
@@ -80,7 +92,7 @@ These modules are macOS-only. Defense-in-depth is layered so that running them o
 
 1. **Top-level `install.sh`** — checks `is_macos` once and then iterates every `brewfile` under this tree via `brew_bundle_install`. Use this as the single entry point when bulk-installing the whole module set.
 2. **Per-brewfile guard** — every `brewfile` starts with `abort "macOS only" unless OS.mac?`. Even a direct `brew bundle --file=…` invocation refuses to run on the wrong host.
-3. **Per-script guard** — the three `*.sh` modules each call `is_macos` at the top of `main()` and bail with an error message otherwise.
+3. **Per-script guard** — each `*.sh` module calls `is_macos` at the top of `main()` and bails with an error message otherwise.
 
 ## Auditing and uninstalling
 

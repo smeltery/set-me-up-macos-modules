@@ -1,0 +1,3 @@
+#!/bin/bash
+# smu --status marker: exit 0 if Endurance is installed.
+[[ -d "/Applications/Endurance.app" ]]

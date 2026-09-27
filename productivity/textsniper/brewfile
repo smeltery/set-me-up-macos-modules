@@ -1,0 +1,3 @@
+abort "macOS only" unless OS.mac?
+
+cask "textsniper"
