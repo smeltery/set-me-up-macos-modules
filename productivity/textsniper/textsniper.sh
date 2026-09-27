@@ -25,7 +25,8 @@ main() {
     # shellcheck source=/dev/null
     source "$repo_root/scripts/lib/install-app.sh"
 
-    macos_modules::install_cask_or_vendor "textsniper"
+    # App Store: https://apps.apple.com/app/textsniper/id1528890965
+    macos_modules::install_cask_or_vendor "textsniper" --mas-id 1528890965
 
 }
 
