@@ -69,6 +69,7 @@ macos/
     ├── cleanmymac-cli/
     ├── endurance/
     ├── imazing/
+    ├── mole/
     ├── muzzle/
     ├── one-switch/
     ├── openlogi/
